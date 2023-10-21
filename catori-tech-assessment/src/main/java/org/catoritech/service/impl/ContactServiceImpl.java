@@ -17,4 +17,9 @@ public class ContactServiceImpl implements ContactService {
 	public List<Contact> readAll() {
 		return contactRepository.readAll();
 	}
+
+	@Override
+	public Contact readById(Long id) {
+		return contactRepository.readById(id);
+	}
 }
