@@ -17,6 +17,8 @@ public class ContactRepository {
 	}
 
 	public Contact readById(Long id) {
-		return entityManager.createQuery("SELECT e FROM Contact e where e.id=id", Contact.class).getSingleResult();
+		return entityManager.createQuery("SELECT e FROM Contact e WHERE e.id = :id", Contact.class)
+		                    .setParameter("id", id)
+		                    .getSingleResult();
 	}
 }
