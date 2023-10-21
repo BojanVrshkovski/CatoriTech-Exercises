@@ -15,4 +15,8 @@ public class ContactRepository {
 	public List<Contact> readAll() {
 		return entityManager.createQuery("SELECT e FROM Contact e", Contact.class).getResultList();
 	}
+
+	public Contact readById(Long id) {
+		return entityManager.createQuery("SELECT e FROM Contact e where e.id=id", Contact.class).getSingleResult();
+	}
 }
