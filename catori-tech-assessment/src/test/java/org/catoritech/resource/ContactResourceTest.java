@@ -17,4 +17,15 @@ public class ContactResourceTest {
 		then().
 			statusCode(200);
 	}
+
+	@Test
+	public void testReadContactById_success(){
+		given().
+			header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON).
+			pathParam("id",1).
+		when().
+			get("api/contact/{id}").
+		then().
+			statusCode(200);
+	}
 }
