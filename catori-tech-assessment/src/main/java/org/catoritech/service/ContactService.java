@@ -1,5 +1,9 @@
 package org.catoritech.service;
 
-public interface ContactService {
+import org.catoritech.entity.Contact;
 
+import java.util.List;
+
+public interface ContactService {
+	List<Contact> readAll();
 }

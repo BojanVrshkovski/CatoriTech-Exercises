@@ -5,7 +5,10 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import org.catoritech.entity.Contact;
 import org.catoritech.service.ContactService;
+
+import java.util.List;
 
 @Path("/api/contact")
 @Produces(MediaType.APPLICATION_JSON)
@@ -17,5 +20,11 @@ public class ContactResource {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getAllEntities() {
 		return "HELLOOO";
+	}
+
+	@GET
+	@Path("/all")
+	public List<Contact> readAllContacts(){
+		return contactService.readAll();
 	}
 }
