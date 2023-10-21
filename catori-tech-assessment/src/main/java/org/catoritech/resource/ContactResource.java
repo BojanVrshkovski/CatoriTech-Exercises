@@ -1,5 +1,20 @@
 package org.catoritech.resource;
 
-public class ContactResource {
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import org.catoritech.service.ContactService;
 
+@Path("/api/contact")
+@Produces(MediaType.APPLICATION_JSON)
+public class ContactResource {
+	@Inject
+	ContactService contactService;
+
+	@GET
+	public String getAllEntities() {
+		return "HELLOOO";
+	}
 }

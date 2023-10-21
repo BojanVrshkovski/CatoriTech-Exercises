@@ -1,12 +1,22 @@
 package org.catoritech.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Contact {
+	@Id
+	@GeneratedValue
 	public Long id;
 	public String name;
 	public String lastName;
 	public String address;
 	public String phoneNumber;
 	public String vat;
+
+	public Contact() {
+	}
 
 	public Contact(Long id, String name, String lastName, String address, String phoneNumber, String vat) {
 		this.id = id;
