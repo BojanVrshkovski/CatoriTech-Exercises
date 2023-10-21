@@ -14,6 +14,7 @@ public class ContactResource {
 	ContactService contactService;
 
 	@GET
+	@Produces(MediaType.TEXT_PLAIN)
 	public String getAllEntities() {
 		return "HELLOOO";
 	}
