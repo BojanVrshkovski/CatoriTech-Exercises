@@ -3,6 +3,7 @@ package org.catoritech.resource;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.catoritech.entity.Contact;
@@ -26,5 +27,11 @@ public class ContactResource {
 	@Path("/all")
 	public List<Contact> readAllContacts(){
 		return contactService.readAll();
+	}
+
+	@GET
+	@Path("/{id}")
+	public Contact readContactById(@PathParam("id") Long id){
+		return contactService.readById(id);
 	}
 }
