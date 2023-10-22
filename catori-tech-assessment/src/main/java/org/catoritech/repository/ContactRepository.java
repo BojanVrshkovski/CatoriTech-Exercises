@@ -21,4 +21,5 @@ public class ContactRepository {
 		                    .setParameter("id", id)
 		                    .getSingleResult();
 	}
+
 }
