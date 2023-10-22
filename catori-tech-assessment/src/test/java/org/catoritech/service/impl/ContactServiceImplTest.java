@@ -52,6 +52,5 @@ public class ContactServiceImplTest {
 
 		Contact createdContact = contactService.create(contactRequest);
 		assertNotNull(createdContact.getId());
-		
 	}
 }
