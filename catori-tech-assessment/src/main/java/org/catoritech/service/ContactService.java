@@ -8,5 +8,5 @@ import java.util.List;
 public interface ContactService {
 	List<Contact> readAll();
 	Contact readById(Long id);
-	Contact create(Contact contact);
+	Contact create(ContactRequest contact);
 }

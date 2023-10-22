@@ -25,8 +25,16 @@ public class ContactRepository {
 	}
 
 	@Transactional
-	public Contact create(Contact contact) {
+	public Contact create(ContactRequest contactRequest) {
+		Contact contact = new Contact();
+		contact.setName(contactRequest.getName());
+		contact.setLastName(contactRequest.getLastName());
+		contact.setAddress(contactRequest.getAddress());
+		contact.setPhoneNumber(contactRequest.getPhoneNumber());
+		contact.setVat(contactRequest.getVat());
+
 		entityManager.persist(contact);
+
 		return contact;
 	}
 }

@@ -39,7 +39,7 @@ public class ContactResource {
 
 	@POST
 	@Path("/create")
-	public Contact createContact(Contact contactRequest){
+	public Contact createContact(ContactRequest contactRequest){
 		return contactService.create(contactRequest);
 	}
 }
