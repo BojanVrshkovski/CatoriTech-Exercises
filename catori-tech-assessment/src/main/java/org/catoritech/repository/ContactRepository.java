@@ -3,7 +3,9 @@ package org.catoritech.repository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import org.catoritech.entity.Contact;
+import org.catoritech.entity.requests.ContactRequest;
 
 import java.util.List;
 
@@ -21,5 +23,5 @@ public class ContactRepository {
 		                    .setParameter("id", id)
 		                    .getSingleResult();
 	}
-
+	
 }
