@@ -9,4 +9,5 @@ public interface ContactService {
 	List<Contact> readAll();
 	Contact readById(Long id);
 	Contact create(ContactRequest contact);
+	void deleteById(Long id);
 }
