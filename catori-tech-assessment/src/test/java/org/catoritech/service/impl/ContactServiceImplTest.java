@@ -1,7 +1,9 @@
 package org.catoritech.service.impl;
 
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.transaction.Transactional;
 import org.catoritech.entity.Contact;
+import org.catoritech.entity.requests.ContactRequest;
 import org.junit.jupiter.api.Test;
 import jakarta.inject.Inject;
 import java.util.List;
@@ -36,5 +38,20 @@ public class ContactServiceImplTest {
 		assertEquals("123 Main St", retrievedContact.getAddress());
 		assertEquals("555-123-4567", retrievedContact.getPhoneNumber());
 		assertEquals("12345A", retrievedContact.getVat());
+	}
+
+	@Test
+	@Transactional
+	public void testCreateContact_success() {
+		ContactRequest contactRequest = new ContactRequest();
+		contactRequest.setName("John");
+		contactRequest.setLastName("Doe");
+		contactRequest.setAddress("123 Main St");
+		contactRequest.setPhoneNumber("555-1234");
+		contactRequest.setVat("V123456");
+
+		Contact createdContact = contactService.create(contactRequest);
+		assertNotNull(createdContact.getId());
+		
 	}
 }
