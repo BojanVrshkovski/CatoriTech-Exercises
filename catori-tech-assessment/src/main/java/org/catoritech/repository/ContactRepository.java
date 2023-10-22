@@ -23,5 +23,10 @@ public class ContactRepository {
 		                    .setParameter("id", id)
 		                    .getSingleResult();
 	}
-	
+
+	@Transactional
+	public ContactRequest create(ContactRequest contact) {
+		entityManager.persist(contact);
+		return contact;
+	}
 }
