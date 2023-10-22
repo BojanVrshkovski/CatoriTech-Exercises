@@ -2,6 +2,7 @@ package org.catoritech.resource;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -42,5 +43,11 @@ public class ContactResource {
 	@Path("/create")
 	public Contact createContact(ContactRequest contactRequest){
 		return contactService.create(contactRequest);
+	}
+
+	@DELETE
+	@Path("/delete/{id}")
+	public void deleteContactById(@PathParam("id") Long id){
+		contactService.deleteById(id);
 	}
 }
