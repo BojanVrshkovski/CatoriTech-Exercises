@@ -25,7 +25,7 @@ public class ContactRepository {
 	}
 
 	@Transactional
-	public ContactRequest create(ContactRequest contact) {
+	public Contact create(Contact contact) {
 		entityManager.persist(contact);
 		return contact;
 	}
