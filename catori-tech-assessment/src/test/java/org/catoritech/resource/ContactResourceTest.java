@@ -2,8 +2,6 @@ package org.catoritech.resource;
 
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.ws.rs.core.MediaType;
-import org.catoritech.entity.Contact;
-import org.catoritech.entity.requests.ContactRequest;
 import org.junit.jupiter.api.Test;
 import jakarta.ws.rs.core.HttpHeaders;
 import static io.restassured.RestAssured.given;

@@ -1,7 +1,6 @@
 package org.catoritech.resource;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -12,7 +11,6 @@ import jakarta.ws.rs.core.MediaType;
 import org.catoritech.entity.Contact;
 import org.catoritech.entity.requests.ContactRequest;
 import org.catoritech.service.ContactService;
-
 import java.util.List;
 
 @Path("/api/contact")

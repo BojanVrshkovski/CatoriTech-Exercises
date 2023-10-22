@@ -53,4 +53,16 @@ public class ContactServiceImplTest {
 		Contact createdContact = contactService.create(contactRequest);
 		assertNotNull(createdContact.getId());
 	}
+
+	@Test
+	@Transactional
+	public void testDeleteById() {
+		Contact contact = new Contact(1L,"John","Doe","123 Main St","555-123-4567","12345A");
+
+		assertNotNull(contact.getId());
+
+		Long contactId = contact.getId();
+
+		contactService.deleteById(contactId);
+	}
 }
