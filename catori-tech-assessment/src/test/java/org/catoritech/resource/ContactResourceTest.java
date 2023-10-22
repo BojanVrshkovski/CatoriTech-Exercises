@@ -43,4 +43,15 @@ public class ContactResourceTest {
 			.statusCode(200)
 			.body("name", is("John"));
 	}
+
+	@Test
+	public void testDeleteContact_success(){
+		given()
+			.contentType("application/json").
+			pathParam("id",1).
+		when()
+			.delete("/api/contact/delete/{id}").
+		then()
+			.statusCode(204);
+	}
 }
