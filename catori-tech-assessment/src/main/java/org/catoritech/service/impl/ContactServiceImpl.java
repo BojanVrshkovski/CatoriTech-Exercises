@@ -3,6 +3,7 @@ package org.catoritech.service.impl;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.catoritech.entity.Contact;
+import org.catoritech.entity.requests.ContactRequest;
 import org.catoritech.repository.ContactRepository;
 import org.catoritech.service.ContactService;
 
@@ -21,5 +22,10 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public Contact readById(Long id) {
 		return contactRepository.readById(id);
+	}
+
+	@Override
+	public ContactRequest create(ContactRequest contact) {
+		return contactRepository.create(contact);
 	}
 }
