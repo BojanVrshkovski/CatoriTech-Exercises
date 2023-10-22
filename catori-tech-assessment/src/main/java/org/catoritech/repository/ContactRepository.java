@@ -37,4 +37,12 @@ public class ContactRepository {
 
 		return contact;
 	}
+
+	@Transactional
+	public void deleteById(Long id) {
+		Contact contact = entityManager.find(Contact.class, id);
+		if (contact != null) {
+			entityManager.remove(contact);
+		}
+	}
 }
