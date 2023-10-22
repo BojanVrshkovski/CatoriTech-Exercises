@@ -40,9 +40,8 @@ public class ContactRepository {
 
 	@Transactional
 	public void deleteById(Long id) {
-		Contact contact = entityManager.find(Contact.class, id);
-		if (contact != null) {
-			entityManager.remove(contact);
-		}
+		entityManager.createQuery("DELETE FROM Contact e WHERE e.id = :id")
+		             .setParameter("id", id)
+		             .executeUpdate();
 	}
 }
