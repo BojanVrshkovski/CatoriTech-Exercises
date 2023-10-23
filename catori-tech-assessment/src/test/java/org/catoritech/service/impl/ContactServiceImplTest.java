@@ -21,13 +21,13 @@ public class ContactServiceImplTest {
 
 
 	@Test
-	public void testReadAll() {
+	public void testReadAll_success() {
 		List<Contact> contacts = contactService.readAll();
 		assertEquals(contacts.size(), contacts.size());
 	}
 
 	@Test
-	public void testReadById() {
+	public void testReadById_success() {
 		Contact newContact = new Contact(1L,"John","Doe","123 Main St","555-123-4567","12345A");
 
 		Long contactId = newContact.getId();
@@ -59,7 +59,7 @@ public class ContactServiceImplTest {
 
 	@Test
 	@Transactional
-	public void testDeleteById() {
+	public void testDeleteById_success() {
 		Contact contact = new Contact(1L,"John","Doe","123 Main St","555-123-4567","12345A");
 
 		assertNotNull(contact.getId());
