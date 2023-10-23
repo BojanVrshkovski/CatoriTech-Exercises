@@ -8,6 +8,7 @@ import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.catoritech.entity.Contact;
 import org.catoritech.entity.requests.ContactRequest;
@@ -54,5 +55,11 @@ public class ContactResource {
 	@Path("/update/{id}")
 	public void updateContactById(@PathParam("id") Long id,ContactRequest contactRequest){
 		contactService.updateById(id,contactRequest);
+	}
+
+	@GET
+	@Path("/search")
+	public List<Contact> searchContacts(@QueryParam("searchTerm") String searchTerm){
+		return contactService.readByFirstNameContainingOrPhoneContaining(searchTerm);
 	}
 }
