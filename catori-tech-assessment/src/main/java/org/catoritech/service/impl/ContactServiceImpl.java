@@ -38,4 +38,9 @@ public class ContactServiceImpl implements ContactService {
 	public void updateById(Long id, ContactRequest contactRequest) {
 		contactRepository.updateById(id,contactRequest);
 	}
+
+	@Override
+	public List<Contact> readByFirstNameContainingOrPhoneContaining(String searchTerm) {
+		return contactRepository.readByFirstNameContainingOrPhoneContaining(searchTerm);
+	}
 }

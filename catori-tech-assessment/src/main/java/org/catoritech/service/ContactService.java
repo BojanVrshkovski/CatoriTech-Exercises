@@ -11,4 +11,5 @@ public interface ContactService {
 	Contact create(ContactRequest contact);
 	void deleteById(Long id);
 	void updateById(Long id, ContactRequest contactRequest);
+	List<Contact> readByFirstNameContainingOrPhoneContaining(String searchTerm)
 }
