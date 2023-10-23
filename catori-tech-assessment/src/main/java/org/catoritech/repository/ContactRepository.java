@@ -6,7 +6,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.catoritech.entity.Contact;
 import org.catoritech.entity.requests.ContactRequest;
-import org.jboss.logging.annotations.Param;
 
 import java.util.List;
 
