@@ -22,12 +22,6 @@ public class ContactResource {
 	ContactService contactService;
 
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String getAllEntities() {
-		return "HELLOOO";
-	}
-
-	@GET
 	@Path("/all")
 	public List<Contact> readAllContacts(){
 		return contactService.readAll();
