@@ -28,19 +28,19 @@ public class ContactServiceImplTest {
 
 	@Test
 	public void testReadById_success() {
-		Contact newContact = new Contact(1L,"John","Doe","123 Main St","555-123-4567","12345A");
+		Contact newContact = new Contact(2L,"Bojan","Vrshkovski","Andrea Jovanoski","071123345","333BV");
 
 		Long contactId = newContact.getId();
 		Contact retrievedContact = contactService.readById(contactId);
 
 		assertNotNull(retrievedContact);
 
-		assertEquals(1L, retrievedContact.getId());
-		assertEquals("John", retrievedContact.getName());
-		assertEquals("Doe", retrievedContact.getLastName());
-		assertEquals("123 Main St", retrievedContact.getAddress());
-		assertEquals("555-123-4567", retrievedContact.getPhoneNumber());
-		assertEquals("12345A", retrievedContact.getVat());
+		assertEquals(2L, retrievedContact.getId());
+		assertEquals("Bojan", retrievedContact.getName());
+		assertEquals("Vrshkovski", retrievedContact.getLastName());
+		assertEquals("Andrea Jovanoski", retrievedContact.getAddress());
+		assertEquals("071123345", retrievedContact.getPhoneNumber());
+		assertEquals("333BV", retrievedContact.getVat());
 	}
 
 	@Test
