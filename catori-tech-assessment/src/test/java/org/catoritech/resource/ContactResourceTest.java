@@ -65,4 +65,15 @@ public class ContactResourceTest {
 		then()
 			.statusCode(204);
 	}
+
+	@Test
+	public void testSearchContacts_success() {
+		given()
+			.header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON)
+			.queryParam("searchTerm", "Bojan")
+			.when()
+			.get("api/contact/search")
+			.then()
+			.statusCode(200);
+	}
 }
