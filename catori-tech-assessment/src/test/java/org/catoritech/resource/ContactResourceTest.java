@@ -52,4 +52,16 @@ public class ContactResourceTest {
 		then()
 			.statusCode(204);
 	}
+
+	@Test
+	public void testUpdateContact_success(){
+		given()
+			.contentType("application/json")
+			.pathParam("id",1)
+			.body("{\"name\":\"John\", \"lastName\":\"Doe\", \"address\":\"123 Main St\", \"phoneNumber\":\"555-1234\", \"vat\":\"V123456\"}").
+		when()
+			.put("/api/contact/update/{id}").
+		then()
+			.statusCode(204);
+	}
 }
