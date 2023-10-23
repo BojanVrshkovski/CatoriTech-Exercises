@@ -23,11 +23,12 @@ public class ContactResourceTest {
 	public void testReadContactById_success(){
 		given().
 			header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON).
-			pathParam("id",1).
+			pathParam("id",2).
 		when().
 			get("api/contact/{id}").
 		then().
-			statusCode(200);
+			statusCode(200).
+			body("name", is("Bojan"));
 	}
 
 	@Test
