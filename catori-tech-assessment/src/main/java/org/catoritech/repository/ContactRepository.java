@@ -44,4 +44,16 @@ public class ContactRepository {
 		             .setParameter("id", id)
 		             .executeUpdate();
 	}
+
+	@Transactional
+	public void updateById(Long id, ContactRequest contactRequest) {
+		entityManager.createQuery("UPDATE Contact e SET e.name = :name, e.lastName = :lastName, e.address = :address, e.phoneNumber = :phoneNumber, e.vat = :vat WHERE e.id = :id")
+		             .setParameter("name", contactRequest.getName())
+		             .setParameter("lastName", contactRequest.getLastName())
+		             .setParameter("address", contactRequest.getAddress())
+		             .setParameter("phoneNumber", contactRequest.getPhoneNumber())
+		             .setParameter("vat", contactRequest.getVat())
+		             .setParameter("id", id)
+		             .executeUpdate();
+	}
 }
