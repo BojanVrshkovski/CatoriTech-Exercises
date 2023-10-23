@@ -4,6 +4,7 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -47,5 +48,11 @@ public class ContactResource {
 	@Path("/delete/{id}")
 	public void deleteContactById(@PathParam("id") Long id){
 		contactService.deleteById(id);
+	}
+
+	@PUT
+	@Path("/update/{id}")
+	public void updateContactById(@PathParam("id") Long id,ContactRequest contactRequest){
+		contactService.updateById(id,contactRequest);
 	}
 }
