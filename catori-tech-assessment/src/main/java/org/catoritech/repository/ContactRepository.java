@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.catoritech.entity.Contact;
 import org.catoritech.entity.requests.ContactRequest;
+import org.jboss.logging.annotations.Param;
 
 import java.util.List;
 
@@ -55,5 +56,11 @@ public class ContactRepository {
 		             .setParameter("vat", contactRequest.getVat())
 		             .setParameter("id", id)
 		             .executeUpdate();
+	}
+
+	public List<Contact> readByFirstNameContainingOrPhoneContaining(String searchTerm) {
+		return entityManager.createQuery("SELECT c FROM Contact c WHERE c.name LIKE CONCAT('%', :searchTerm, '%') OR c.phoneNumber LIKE CONCAT('%', :searchTerm, '%')", Contact.class)
+		                    .setParameter("searchTerm", searchTerm)
+		                    .getResultList();
 	}
 }
