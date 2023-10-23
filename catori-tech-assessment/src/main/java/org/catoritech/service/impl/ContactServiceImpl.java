@@ -33,4 +33,9 @@ public class ContactServiceImpl implements ContactService {
 	public void deleteById(Long id) {
 		contactRepository.deleteById(id);
 	}
+
+	@Override
+	public void updateById(Long id, ContactRequest contactRequest) {
+		contactRepository.updateById(id,contactRequest);
+	}
 }

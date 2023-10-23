@@ -10,4 +10,5 @@ public interface ContactService {
 	Contact readById(Long id);
 	Contact create(ContactRequest contact);
 	void deleteById(Long id);
+	void updateById(Long id, ContactRequest contactRequest);
 }
