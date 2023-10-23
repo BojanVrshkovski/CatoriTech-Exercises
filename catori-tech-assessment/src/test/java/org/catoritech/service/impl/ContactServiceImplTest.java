@@ -1,6 +1,7 @@
 package org.catoritech.service.impl;
 
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.catoritech.entity.Contact;
 import org.catoritech.entity.requests.ContactRequest;
@@ -15,6 +16,8 @@ public class ContactServiceImplTest {
 
 	@Inject
 	ContactServiceImpl contactService;
+	@Inject
+	EntityManager entityManager;
 
 
 	@Test
